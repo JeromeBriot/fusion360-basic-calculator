@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="description" content="Panel content of the 'Calculator' add-in for Fusion 360">
+		<meta name="author" content="Jerome Briot">
+		<link rel="stylesheet" type="text/css" href="BCStyle.css">
+		<script type="text/javascript" src="./string-math/string-math.js"></script>
+		<script type="text/javascript" src="BCScript.js"></script>	
+	</head>
+	<body>
+		<form name="form">
+		  <input class="textview" name="textview" onkeypress="return dispChar(event)">
+		</form>
+		<table>
+		  <tr>
+			<td colspan=2><input class="button" style="width:64px" type="button" value="C" onclick="removeAllChar()"></td>
+			<td colspan=2><input class="button" style="width:64px" type="button" value="&larr;" onclick="removeOneChar()"></td>
+		  </tr>
+		  <tr>
+			<td><input class="button" type="button" value="7" onclick="addChar('7')"></td>
+			<td><input class="button" type="button" value="8" onclick="addChar('8')"></td>
+			<td><input class="button" type="button" value="9" onclick="addChar('9')"></td>
+			<td><input class="button" type="button" value="/" onclick="addChar('/')"></td>                
+			<td><input class="button" type="button" value="(" onclick="addChar('(')"></td>
+		  </tr>
+		  <tr>
+			<td><input class="button" type="button" value="4" onclick="addChar('4')"></td>
+			<td><input class="button" type="button" value="5" onclick="addChar('5')"></td>
+			<td><input class="button" type="button" value="6" onclick="addChar('6')"></td>
+			<td><input class="button" type="button" value="*" onclick="addChar('*')"></td>
+			<td><input class="button" type="button" value=")" onclick="addChar(')')"></td>
+		  </tr>
+		  <tr>
+			<td><input class="button" type="button" value="1" onclick="addChar('1')"></td>
+			<td><input class="button" type="button" value="2" onclick="addChar('2')"></td>
+			<td><input class="button" type="button" value="3" onclick="addChar('3')"></td>
+			<td><input class="button" type="button" value="-" onclick="addChar('-')"></td>
+			<td rowspan=2><input class="button" style="height:64px" type="button" value="=" onclick="compute()"></td>
+			
+		  </tr>
+		  <tr>
+			<td colspan=2><input class="button" style="width:64px" type="button" value="0" onclick="addChar('0')"></td>
+			<td><input class="button" type="button" value="." onclick="addChar('.')"></td>
+			<td><input class="button" type="button" value="+" onclick="addChar('+')"></td>  
+		  </tr>
+		</table>
+		<div id="help">
+		  <small>
+			<a href="mailto:jbtechlab@gmail.com?subject=Fusion 360 - Basic Calculator Add-in">Need help?</a>
+		  </small>	
+		</div>
+	</body>
+</html>

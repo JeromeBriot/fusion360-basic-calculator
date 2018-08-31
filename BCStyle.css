@@ -1,0 +1,37 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body {
+  background-color: #dddddd;
+  padding: 5px 5px 0 5px;
+}
+
+.button{
+	width:30px;
+	height:30px;
+	font-size: 12;
+	cursor: pointer;
+	border: none;
+	background-color: white;
+	margin: 2px 2px 0 0;
+	border: none;	
+}
+
+input[type=button]:hover {
+    background-color: #a7c2e6;
+}
+
+.textview{
+	width: 157px;
+	margin: 2px;
+	font-size: 14;
+	padding: 5px;
+	border: none;
+}
+
+#help {
+  text-align:right;
+  padding-right: 5px;
+}

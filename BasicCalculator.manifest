@@ -1,0 +1,13 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"addin",
+	"id":	"1e096e65-a2f8-477a-9881-2488e6a36f2f",
+	"author":	"Jerome Briot",
+	"description":	{
+		"":	""
+	},
+	"version":	"0.1.0",
+	"runOnStartup":	false,
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true
+}
