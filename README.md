@@ -13,5 +13,16 @@ Run the GitHub2Fusion360 add-in in Fusion 360 and copy/paste the URL of the repo
 
 Run the BasicCalculator add-in and you should see a new button with a green icon (![Basic Calculator icon](./resources/16x16-normal.png)) on the quick access toolbar on the upper right corner of the Fusion 360 UI. Click on the button to toggle the visibility of the calculator panel.
 
+## History
+
+0.2.0 - Add unit converter
+0.1.0 - First release
+
+## Acknowledgement
+
+The add-in uses the following JavaScript contributions:
+* [string-math](https://github.com/devrafalko/string-math) by devrafalko
+* [measurements.js](https://github.com/extramaster/measurements.js) by Andy Tran
+
 ## License
 Codes are licensed under the terms of the BSD-2-Clause License. Please see the License.txt file for full details.

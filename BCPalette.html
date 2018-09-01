@@ -5,13 +5,14 @@
 		<meta name="author" content="Jerome Briot">
 		<link rel="stylesheet" type="text/css" href="BCStyle.css">
 		<script type="text/javascript" src="./string-math/string-math.js"></script>
+		<script type="text/javascript" src="./measurements/metrics.js"></script>
 		<script type="text/javascript" src="BCScript.js"></script>	
 	</head>
 	<body>
 		<form name="form">
 		  <input class="textview" name="textview" onkeypress="return dispChar(event)">
 		</form>
-		<table>
+		<table style="margin-bottom: 7px;">
 		  <tr>
 			<td colspan=2><input class="button" style="width:64px" type="button" value="C" onclick="removeAllChar()"></td>
 			<td colspan=2><input class="button" style="width:64px" type="button" value="&larr;" onclick="removeOneChar()"></td>
@@ -44,6 +45,116 @@
 			<td><input class="button" type="button" value="+" onclick="addChar('+')"></td>  
 		  </tr>
 		</table>
+<hr>
+    <table style="margin-top: 5px;">
+	  <tr>
+	    <td colspan=5>
+		  <select id="subject" style="width:165px;font-size:12px;" onchange="setSubject()">
+			<option>Acceleration</option>
+			<option>Angle</option>
+			<option>Area</option>
+			<option>Data</option>
+			<option>Data Transfer</option>
+			<option>Density</option>
+			<option selected="selected">Distance/Length</option>
+			<option>Electrical Charge</option>
+			<option>Energy & Work</option>
+			<option>Flow Rate</option>
+			<option>Force</option>
+			<option>Fuel Consumption</option>
+			<option>Luminance</option>
+			<option>Mass/Weight</option>
+			<option>Power</option>
+			<option>Pressure</option>
+			<option>Radioactivity</option>
+			<option>Speed</option>
+			<option>Temperature</option>
+			<option>Time</option>
+			<option>Torque</option>
+			<option>Volume</option>
+		  </select>
+		</td>
+	  </tr>
+      <tr>
+      <td colspan=2 style="width:64px" align="center">From</td>
+      <td style="width:30px" align="center">&rarr;</td>
+      <td colspan=2 style="width:64px" align="center">To</td>
+      </tr>
+      <tr>
+      <td colspan=2 style="width:64px" align="center">
+		<select id="from" style="width:64px;font-size:11px;">
+			<option>Nanometer</option>
+			<option>Micrometer</option>
+			<option selected="selected">Millimeter</option>
+			<option>Centimeter</option>
+			<option>Decimeter</option>
+			<option>Meter</option>
+			<option>Kilometer</option>
+			<option>Picometer</option>
+			<option>Femtometer</option>
+			<option>Attommeter</option>
+			<option>Zeptometer</option>
+			<option>Yoctometer</option>
+			<option>Inch</option>
+			<option>Feet</option>
+			<option>Yard</option>
+			<option>Mile</option>
+			<option>Mile(nautical)</option>
+			<option>Light-Year</option>
+			<option>Light-Day</option>
+			<option>Light-Min</option>
+			<option>Light-Sec</option>
+			<option>Astron. Unit</option>
+			<option>Parsec</option>
+			<option>Chain</option>
+			<option>Furlong</option>
+			<option>Point</option>
+			<option>Cun</option>
+			<option>Chi</option>
+			<option>Li</option>
+			<option>Gongli</option>
+		</select>
+	  </td>
+      <td style="width:30px"></td>
+      <td colspan=2 style="width:64px" align="center">
+		<select id="to" style="width:64px;font-size:11px;">
+			<option>Nanometer</option>
+			<option>Micrometer</option>
+			<option>Millimeter</option>
+			<option>Centimeter</option>
+			<option>Decimeter</option>
+			<option>Meter</option>
+			<option>Kilometer</option>
+			<option>Picometer</option>
+			<option>Femtometer</option>
+			<option>Attommeter</option>
+			<option>Zeptometer</option>
+			<option>Yoctometer</option>
+			<option selected="selected">Inch</option>
+			<option>Feet</option>
+			<option>Yard</option>
+			<option>Mile</option>
+			<option>Mile(nautical)</option>
+			<option>Light-Year</option>
+			<option>Light-Day</option>
+			<option>Light-Min</option>
+			<option>Light-Sec</option>
+			<option>Astron. Unit</option>
+			<option>Parsec</option>
+			<option>Chain</option>
+			<option>Furlong</option>
+			<option>Point</option>
+			<option>Cun</option>
+			<option>Chi</option>
+			<option>Li</option>
+			<option>Gongli</option>
+		</select>
+	  </td>
+      </tr>
+      <tr>
+        <td colspan=5><input class="button" type="button" style="width:165px" value="Convert" onclick="convert()"></td>
+      </tr>
+    </table>
 		<div id="help">
 		  <small>
 			<a href="mailto:jbtechlab@gmail.com?subject=Fusion 360 - Basic Calculator Add-in">Need help?</a>

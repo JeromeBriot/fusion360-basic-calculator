@@ -11,7 +11,7 @@ ctrl = adsk.core.CommandControl.cast(None)
 handlers = []
 
 this_addin_name = 'Basic Calculator'
-this_addin_version = '0.0.1'
+this_addin_version = '0.2.0'
 this_addin_author = 'Jerome Briot'
 this_addin_contact = 'jbtechlab@gmail.com'
 
@@ -69,7 +69,7 @@ def run(context):
 
         ctrl = qatRToolbar.controls.addCommand(showPaletteCmdDef, 'HealthStatusCommand', False)
 
-        palette = ui.palettes.add('BasicCalculatorPalette', 'Basic Calculator', 'BCPalette.html', False, True, True, 180, 290)
+        palette = ui.palettes.add('BasicCalculatorPalette', 'Basic Calculator', 'BCPalette.html', False, True, True, 180, 400)
         palette.setPosition(400,400)
         palette.isVisible = False
 
