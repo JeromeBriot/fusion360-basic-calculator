@@ -1,5 +1,5 @@
 # ![BasicCalculator](./resources/32x32-normal.png) Fusion 360 - Basic calculator
-An add-in that displays a basic calculator an a unit converter in Autodesk Fusion 360.
+An add-in that displays a basic calculator and a unit converter in Autodesk Fusion 360.
 
 ![Basic Calculator palette](./resources/fusion-360-basic-calculator-palette.png)
 
