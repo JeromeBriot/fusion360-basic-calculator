@@ -1,5 +1,5 @@
 #Author-Jerome Briot
-#Description-
+#Description-Display a basic calculator in Fusion 360
 
 import adsk.core, adsk.fusion, traceback
 
@@ -10,28 +10,25 @@ ctrl = adsk.core.CommandControl.cast(None)
 
 handlers = []
 
-this_addin_name = 'Basic Calculator'
-this_addin_version = '0.2.0'
-this_addin_author = 'Jerome Briot'
-this_addin_contact = 'jbtechlab@gmail.com'
+thisAddinName = 'BasicCalculator'
+thisAddinVersion = '0.3.0'
+thisAddinAuthor = 'Jerome Briot'
+thisAddinContact = 'jbtechlab@gmail.com'
 
 # Event handler for the commandExecuted event.
 class ShowPaletteCommandExecuteHandler(adsk.core.CommandEventHandler):
     def __init__(self):
         super().__init__()
     def notify(self, args):
-        global palette, ui
+
         try:
 
-            cmdDef = ui.commandDefinitions.itemById('showBasicCalculator')
-            if palette.isVisible:
-                palette.isVisible = False
-                ctrl.commandDefinition.name = 'Show basic calculator'
-                cmdDef.name = 'Show basic calculator'
+            palette = ui.palettes.itemById(thisAddinName + 'Palette')
+            if not palette:            
+                palette = ui.palettes.add(thisAddinName + 'Palette', 'Basic Calculator', 'BCPalette.html', True, True, True, 185, 410, True)
+                palette.setPosition(400,400)
             else:
-                palette.isVisible = True
-                ctrl.commandDefinition.name = 'Hide basic calculator'
-                cmdDef.name = 'Hide basic calculator'
+                palette.isVisible = not(palette.isVisible)
 
         except:
             ui.messageBox('Command executed failed: {}'.format(traceback.format_exc()), this_addin_name, 0, 0)
@@ -60,7 +57,7 @@ def run(context):
 
         qatRToolbar = ui.toolbars.itemById('QATRight')
 
-        showPaletteCmdDef = ui.commandDefinitions.addButtonDefinition('showBasicCalculator', 'Show basic calculator', 'Display a basic calculator in Fusion 360', './resources')
+        showPaletteCmdDef = ui.commandDefinitions.addButtonDefinition(thisAddinName + 'CmdDef', 'Basic calculator', 'Display a basic calculator in Fusion 360', './resources')
 
         # Connect to Command Created event.
         onCommandCreated = ShowPaletteCommandCreatedHandler()
@@ -68,10 +65,6 @@ def run(context):
         handlers.append(onCommandCreated)
 
         ctrl = qatRToolbar.controls.addCommand(showPaletteCmdDef, 'HealthStatusCommand', False)
-
-        palette = ui.palettes.add('BasicCalculatorPalette', 'Basic Calculator', 'BCPalette.html', False, True, True, 180, 400)
-        palette.setPosition(400,400)
-        palette.isVisible = False
 
     except:
         if ui:
@@ -84,18 +77,18 @@ def stop(context):
 
     try:
 
-        cmdDef = ui.commandDefinitions.itemById('showBasicCalculator')
+        palette = ui.palettes.itemById(thisAddinName + 'Palette')
+        if palette:
+            palette.deleteMe()
+
+        cmdDef = ui.commandDefinitions.itemById(thisAddinName + 'CmdDef')
         if cmdDef:
             cmdDef.deleteMe()
 
         qatRToolbar = ui.toolbars.itemById('QATRight')
-        cmd = qatRToolbar.controls.itemById('showBasicCalculator')
+        cmd = qatRToolbar.controls.itemById(thisAddinName + 'CmdDef')
         if cmd:
             cmd.deleteMe()
-
-        palette = ui.palettes.itemById('BasicCalculatorPalette')
-        if palette:
-            palette.deleteMe()
 
     except:
         if ui:
